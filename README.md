@@ -8,8 +8,9 @@ Phrases get swapped, `-ing` endings drop their `g`, and the occasional filler �
 
 Grab the latest release from [GitHub Releases](https://github.com/atabisz/JivePipe/releases/latest):
 
-- **Linux binary** — `jivepipe-linux-amd64.tar.gz` — extract and run directly
-- **Debian/Ubuntu** — `jivepipe_*_amd64.deb` — installs to `/usr/bin`
+**Linux**
+- `jivepipe-linux-amd64.tar.gz` — extract and run directly
+- `jivepipe_*_amd64.deb` — installs to `/usr/bin`
 
 ```bash
 # Binary
@@ -18,6 +19,17 @@ tar -xzf jivepipe-linux-amd64.tar.gz
 
 # Deb
 sudo dpkg -i jivepipe_*_amd64.deb
+```
+
+**Windows**
+- `jivepipe-windows-amd64.zip` — extract and run directly
+
+```powershell
+Expand-Archive jivepipe-windows-amd64.zip
+.\jivepipe.exe
+
+# Pipe in PowerShell
+Get-Content sometext.txt | .\jivepipe.exe
 ```
 
 ## Build
