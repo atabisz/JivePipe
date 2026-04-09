@@ -1,0 +1,54 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+    tags: ["v*"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build binary
+        run: bun build --compile src/index.ts --outfile jivepipe
+
+      - name: Build deb package
+        run: |
+          VERSION=$(jq -r .version package.json)
+          PKG="jivepipe_${VERSION}_amd64"
+          mkdir -p "${PKG}/DEBIAN"
+          mkdir -p "${PKG}/usr/bin"
+          cp jivepipe "${PKG}/usr/bin/jivepipe"
+          chmod 755 "${PKG}/usr/bin/jivepipe"
+          printf "Package: jivepipe\nVersion: %s\nArchitecture: amd64\nMaintainer: Alex Tabisz\nDescription: Translate any text into authentic Harlem Jive slang\n Pipe text in, get jive out.\n" "$VERSION" > "${PKG}/DEBIAN/control"
+          dpkg-deb --build "${PKG}"
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: jivepipe-linux-amd64
+          path: jivepipe
+
+      - name: Upload deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: jivepipe-deb
+          path: "*.deb"
+
+      - name: Create release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            jivepipe
+            "*.deb"
