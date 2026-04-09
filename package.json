@@ -7,6 +7,8 @@
   },
   "scripts": {
     "start": "bun src/index.ts",
+    "build": "bun build --compile src/index.ts --outfile jivepipe",
+    "build:install": "bun build --compile src/index.ts --outfile jivepipe && sudo mv jivepipe /usr/local/bin/jivepipe",
     "test": "bun test"
   },
   "devDependencies": {

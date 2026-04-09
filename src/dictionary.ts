@@ -35,7 +35,14 @@ export const phrases: Entry[] = [
   { from: "come on", to: "lay it on me" },
   { from: "get out of here", to: "cut out" },
   { from: "having a good time", to: "groovin' solid" },
+  { from: "have a good time", to: "have a ball" },
+  { from: "have fun", to: "have a ball" },
   { from: "out of this world", to: "real gone" },
+  { from: "dressed up", to: "togged to the bricks" },
+  { from: "shake hands", to: "gimme some skin" },
+  { from: "lose your mind", to: "blow your wig" },
+  { from: "what's your thing", to: "what's your bag" },
+  { from: "what is your thing", to: "what's your bag" },
 ];
 
 // Single-word substitutions
@@ -67,6 +74,7 @@ export const words: Entry[] = [
   { from: "doctor", to: "sawbones" },
   { from: "stranger", to: "nowhere cat" },
   { from: "expert", to: "hep cat" },
+  { from: "girlfriend", to: "queen" },
 
   // Money / possessions
   { from: "money", to: "bread" },
@@ -80,13 +88,17 @@ export const words: Entry[] = [
   { from: "apartment", to: "pad" },
   { from: "room", to: "cubby" },
   { from: "clothes", to: "threads" },
-  { from: "suit", to: "sharp threads" },
+  { from: "suit", to: "vine" },
   { from: "hat", to: "lid" },
   { from: "shoes", to: "stomps" },
 
   // Music / entertainment
   { from: "music", to: "sounds" },
   { from: "song", to: "number" },
+  { from: "record", to: "platter" },
+  { from: "album", to: "wax" },
+  { from: "skill", to: "chops" },
+  { from: "talent", to: "chops" },
   { from: "band", to: "outfit" },
   { from: "concert", to: "session" },
   { from: "party", to: "session" },
@@ -130,6 +142,10 @@ export const words: Entry[] = [
   { from: "coffee", to: "mud" },
   { from: "beer", to: "suds" },
   { from: "cigarette", to: "square" },
+  { from: "liquor", to: "hooch" },
+  { from: "whiskey", to: "hooch" },
+  { from: "alcohol", to: "giggle water" },
+  { from: "drunk", to: "stewed" },
 
   // Verbs
   { from: "understand", to: "dig" },
@@ -177,6 +193,10 @@ export const words: Entry[] = [
   { from: "awful", to: "a real drag" },
   { from: "cool", to: "hip" },
   { from: "uncool", to: "square" },
+  { from: "stylish", to: "sharp" },
+  { from: "copasetic", to: "the most righteous" },
+  { from: "salty", to: "steamed" },
+  { from: "groovy", to: "the ginchiest" },
   { from: "smart", to: "hep" },
   { from: "intelligent", to: "hip" },
   { from: "stupid", to: "a real square" },
@@ -235,6 +255,13 @@ export const words: Entry[] = [
   { from: "therefore", to: "so lay it down" },
   { from: "honestly", to: "no jive" },
 
+  // Time / rest
+  { from: "evening", to: "the early black" },
+  { from: "morning", to: "the early bright" },
+  { from: "sleep", to: "the nod" },
+  { from: "bed", to: "the rack" },
+  { from: "knife", to: "shiv" },
+
   // Misc nouns
   { from: "idea", to: "scene" },
   { from: "story", to: "tale" },
@@ -257,6 +284,9 @@ export const words: Entry[] = [
   { from: "eyes", to: "peepers" },
   { from: "hands", to: "claws" },
   { from: "feet", to: "stompers" },
+  { from: "legs", to: "gams" },
+  { from: "body", to: "frame" },
+  { from: "brain", to: "wig" },
 ];
 
 // Words ending in -ing that should NOT become -in'
