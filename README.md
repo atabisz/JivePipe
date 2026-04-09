@@ -11,27 +11,27 @@ Written in C. Binary is ~35KB.
 Grab the latest release from [GitHub Releases](https://github.com/atabisz/JivePipe/releases/latest):
 
 **Linux**
-- `jivepipe-linux-amd64.tar.gz` — extract and run directly
-- `jivepipe_*_amd64.deb` — installs to `/usr/bin`
+- `jive-linux-amd64.tar.gz` — extract and run directly
+- `jive_*_amd64.deb` — installs to `/usr/bin`
 
 ```bash
 # Binary
-tar -xzf jivepipe-linux-amd64.tar.gz
-./jivepipe
+tar -xzf jive-linux-amd64.tar.gz
+./jive
 
 # Deb
-sudo dpkg -i jivepipe_*_amd64.deb
+sudo dpkg -i jive_*_amd64.deb
 ```
 
 **Windows**
-- `jivepipe-windows-amd64.zip` — extract and run directly
+- `jive-windows-amd64.zip` — extract and run directly
 
 ```powershell
-Expand-Archive jivepipe-windows-amd64.zip
-.\jivepipe.exe
+Expand-Archive jive-windows-amd64.zip
+.\jive.exe
 
 # Pipe in PowerShell
-Get-Content sometext.txt | .\jivepipe.exe
+Get-Content sometext.txt | .\jive.exe
 ```
 
 ## Build
@@ -42,7 +42,7 @@ Requires `gcc` and `make`.
 make
 ```
 
-This produces a stripped `./jivepipe` binary (~35KB) in the project root.
+This produces a stripped `./jive` binary (~35KB) in the project root.
 
 To install system-wide:
 
@@ -50,35 +50,35 @@ To install system-wide:
 sudo make install
 ```
 
-This installs to `/usr/local/bin/jivepipe`.
+This installs to `/usr/local/bin/jive`.
 
 ## Usage
 
 **Pipe from stdin:**
 ```bash
-cat sometext.txt | jivepipe
+cat sometext.txt | jive
 ```
 
 **Pass a file directly:**
 ```bash
-jivepipe sometext.txt
+jive sometext.txt
 ```
 
 **Inline with echo:**
 ```bash
-echo "Hello, how are you doing today?" | jivepipe
+echo "Hello, how are you doing today?" | jive
 # → "Hey there, daddy-o, what's your story, morning glory doin' today?"
 ```
 
 ## Example output
 
 ```
-$ echo "The meeting is at the office. My boss wants to talk about money." | jivepipe
+$ echo "The meeting is at the office. My boss wants to talk about money." | jive
 The powwow is at the gig spot. My big daddy wants to rap about bread.
 ```
 
 ```
-$ echo "Good morning. I don't know what's happening today, but let's go." | jivepipe
+$ echo "Good morning. I don't know what's happening today, but let's go." | jive
 Solid mornin', daddy-o. I ain't hip to it what's goin' down today, but let's split.
 ```
 
@@ -86,32 +86,32 @@ Solid mornin', daddy-o. I ain't hip to it what's goin' down today, but let's spl
 
 **Jive-ify your git log:**
 ```bash
-git log --oneline | jivepipe
+git log --oneline | jive
 ```
 
 **Translate error messages:**
 ```bash
-make 2>&1 | jivepipe
+make 2>&1 | jive
 ```
 
 **Pipe man pages through it:**
 ```bash
-man ls | col -b | jivepipe | less
+man ls | col -b | jive | less
 ```
 
 **Liven up a meeting agenda:**
 ```bash
-cat agenda.txt | jivepipe > agenda-jive.txt
+cat agenda.txt | jive > agenda-jive.txt
 ```
 
 **Commit message translator (for posterity):**
 ```bash
-git log --format="%s" | jivepipe
+git log --format="%s" | jive
 ```
 
 **Pipe in your README for a vibe check:**
 ```bash
-cat README.md | jivepipe
+cat README.md | jive
 ```
 
 ## Development

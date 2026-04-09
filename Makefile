@@ -1,7 +1,7 @@
 VERSION = 1.0.0
 CC      = gcc
 CFLAGS  = -O2 -Wall -Wextra -std=c99
-TARGET  = jivepipe
+TARGET  = jive
 SRCS    = src/main.c src/translator.c
 HEADERS = src/translator.h src/dictionary.h
 

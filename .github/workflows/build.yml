@@ -20,41 +20,41 @@ jobs:
       - name: Build Linux binary
         run: |
           make
-          chmod +x jivepipe
-          tar -czf jivepipe-linux-amd64.tar.gz jivepipe
+          chmod +x jive
+          tar -czf jive-linux-amd64.tar.gz jive
 
       - name: Build Windows binary
         run: |
-          x86_64-w64-mingw32-gcc -O2 -Wall -std=c99 -o jivepipe.exe src/main.c src/translator.c
-          zip jivepipe-windows-amd64.zip jivepipe.exe
+          x86_64-w64-mingw32-gcc -O2 -Wall -std=c99 -o jive.exe src/main.c src/translator.c
+          zip jive-windows-amd64.zip jive.exe
 
       - name: Build deb package
         run: |
           VERSION=$(grep '^VERSION' Makefile | awk '{print $3}')
-          PKG="jivepipe_${VERSION}_amd64"
+          PKG="jive_${VERSION}_amd64"
           mkdir -p "${PKG}/DEBIAN"
           mkdir -p "${PKG}/usr/bin"
-          cp jivepipe "${PKG}/usr/bin/jivepipe"
-          chmod 755 "${PKG}/usr/bin/jivepipe"
-          printf "Package: jivepipe\nVersion: %s\nArchitecture: amd64\nMaintainer: Alex Tabisz\nDescription: Translate any text into authentic Harlem Jive slang\n Pipe text in, get jive out.\n" "$VERSION" > "${PKG}/DEBIAN/control"
+          cp jive "${PKG}/usr/bin/jive"
+          chmod 755 "${PKG}/usr/bin/jive"
+          printf "Package: jive\nVersion: %s\nArchitecture: amd64\nMaintainer: Alex Tabisz\nDescription: Translate any text into authentic Harlem Jive slang\n Pipe text in, get jive out.\n" "$VERSION" > "${PKG}/DEBIAN/control"
           dpkg-deb --build "${PKG}"
 
       - name: Upload Linux binary
         uses: actions/upload-artifact@v7
         with:
-          name: jivepipe-linux-amd64
-          path: jivepipe-linux-amd64.tar.gz
+          name: jive-linux-amd64
+          path: jive-linux-amd64.tar.gz
 
       - name: Upload Windows binary
         uses: actions/upload-artifact@v7
         with:
-          name: jivepipe-windows-amd64
-          path: jivepipe-windows-amd64.zip
+          name: jive-windows-amd64
+          path: jive-windows-amd64.zip
 
       - name: Upload deb
         uses: actions/upload-artifact@v7
         with:
-          name: jivepipe-deb
+          name: jive-deb
           path: "*.deb"
 
       - name: Create release
@@ -62,6 +62,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            jivepipe-linux-amd64.tar.gz
-            jivepipe-windows-amd64.zip
+            jive-linux-amd64.tar.gz
+            jive-windows-amd64.zip
             *.deb

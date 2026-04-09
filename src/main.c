@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     if (argc >= 2) {
         FILE *f = fopen(argv[1], "r");
         if (!f) {
-            fprintf(stderr, "jivepipe: cannot open '%s'\n", argv[1]);
+            fprintf(stderr, "jive: cannot open '%s'\n", argv[1]);
             return 1;
         }
         process(f);
