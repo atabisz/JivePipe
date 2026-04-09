@@ -148,7 +148,7 @@ void translate_line(const char *input, char *output, int output_size) {
 
     if (trimlen > 10 && (rand() % 5) == 0) {
         int end = t2p - 1;
-        while (end >= 0 && (t2[end] == '.' || t2[end] == '!' || t2[end] == '?'))
+        while (end >= 0 && (t2[end] == '.' || t2[end] == '!' || t2[end] == '?' || t2[end] == ',' || t2[end] == ';'))
             end--;
         t2p = end + 1;
         t2[t2p] = '\0';
