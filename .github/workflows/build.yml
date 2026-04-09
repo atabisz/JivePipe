@@ -24,6 +24,7 @@ jobs:
       - name: Build binary
         run: |
           bun build --compile src/index.ts --outfile jivepipe
+          chmod +x jivepipe
           tar -czf jivepipe-linux-amd64.tar.gz jivepipe
 
       - name: Build deb package
