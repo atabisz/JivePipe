@@ -4,6 +4,22 @@ Translate any text into authentic Harlem Jive slang. Pipe text in, get jive out.
 
 Phrases get swapped, `-ing` endings drop their `g`, and the occasional filler — *daddy-o* — rolls in at random. The translation is single-pass, so substitutions never cascade into each other.
 
+## Download
+
+Grab the latest release from [GitHub Releases](https://github.com/atabisz/JivePipe/releases/latest):
+
+- **Linux binary** — `jivepipe-linux-amd64.tar.gz` — extract and run directly
+- **Debian/Ubuntu** — `jivepipe_*_amd64.deb` — installs to `/usr/bin`
+
+```bash
+# Binary
+tar -xzf jivepipe-linux-amd64.tar.gz
+./jivepipe
+
+# Deb
+sudo dpkg -i jivepipe_*_amd64.deb
+```
+
 ## Build
 
 Requires [Bun](https://bun.sh).
