@@ -5,8 +5,6 @@ on:
     branches: [master]
     tags: ["v*"]
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build-linux:
@@ -15,7 +13,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -42,13 +40,13 @@ jobs:
           dpkg-deb --build "${PKG}"
 
       - name: Upload binary
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: jivepipe-linux-amd64
           path: jivepipe-linux-amd64.tar.gz
 
       - name: Upload deb
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: jivepipe-deb
           path: "*.deb"
@@ -67,7 +65,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -82,7 +80,7 @@ jobs:
           Compress-Archive -Path jivepipe.exe -DestinationPath jivepipe-windows-amd64.zip
 
       - name: Upload binary
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: jivepipe-windows-amd64
           path: jivepipe-windows-amd64.zip
