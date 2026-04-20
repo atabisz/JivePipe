@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# tests/test_phase03.sh — Phase 03 grammatical-rules validation
+# tests/validate_grammar_rules.sh — Phase 03 grammatical-rules validation
 # Tests: GRAM-01, GRAM-02, GRAM-03, sort invariant, entry count, build, regression
-# Usage: bash tests/test_phase03.sh
+# Usage: bash tests/validate_grammar_rules.sh
 # Exit: 0 if all pass, 1 if any fail
 
 set -euo pipefail
@@ -140,7 +140,8 @@ fi
 # ---------------------------------------------------------------------------
 
 echo "--- REGRESSION ---"
-assert_contains "regression_buddy_ace" "my buddy is here" "ace"
+assert_contains "regression_buddy_ace"   "my buddy is here"    "ace"
+assert_contains "regression_want_scoff"  "I want to eat food"  "scoff"
 
 # ---------------------------------------------------------------------------
 # SUMMARY
