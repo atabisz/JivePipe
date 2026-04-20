@@ -46,15 +46,22 @@ static const Entry phrases[] = {
     {"there's a",        "it's a"},
     {"there are",        "it are"},
     {"i already",        "i done"},
+    {"fixing to",        "finna"},
+    {"trying to",        "tryna"},
     {"right on",              "right on, daddy-o"},
     {"you know",              "you dig"},
     {"for real",              "no jive"},
     {"let's go",              "let's split"},
     {"have fun",              "have a ball"},
     {"fall out",              "blow your wig"},
+    {"going to",         "gonna"},
     {"fall in",               "roll in"},
     {"hang on",               "cool it a sec"},
     {"come on",               "lay it on me"},
+    {"want to",          "wanna"},
+    {"give me",          "gimme"},
+    {"got to",           "gotta"},
+    {"let me",           "lemme"},
 };
 static const int phrases_count = (int)(sizeof(phrases) / sizeof(phrases[0]));
 
