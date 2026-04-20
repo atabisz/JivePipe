@@ -44,7 +44,7 @@ static const Entry phrases[] = {
     {"good luck",             "solid vibes"},
     {"of course",             "solid"},
     {"there's a",        "it's a"},
-    {"there are",        "it are"},
+    {"there are",        "they be"},
     {"i already",        "i done"},
     {"fixing to",        "finna"},
     {"trying to",        "tryna"},
