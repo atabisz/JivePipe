@@ -42,7 +42,10 @@ Plans:
   2. Input containing `car` produces `short`; `money` produces `scratch`; `shoes` produces `kicks`; `hat` produces `sky piece`
   3. Input containing `icky` or `mellow` or `cool` passes through or produces correct adjective substitution
   4. Input containing `snobbish` produces `dicty`; `stuffy` produces `hincty`
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 02-01-PLAN.md — Resolve 6 entry conflicts and add 20 new era-authentic vocabulary entries to src/dictionary.h
 
 ### Phase 3: Grammatical Rules
 **Goal**: The `phrases[]` array implements existential "it", completive "done", and the contraction table
@@ -63,5 +66,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Dictionary Corrections + Filler Quality | 1/1 | Complete | 2026-04-20 |
-| 2. Vocabulary Expansion | 0/0 | Not started | - |
+| 2. Vocabulary Expansion | 0/1 | Not started | - |
 | 3. Grammatical Rules | 0/0 | Not started | - |
