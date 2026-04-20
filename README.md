@@ -24,12 +24,12 @@ Grammar rules (existential "it", completive "done", contraction table) are imple
 Grab the latest release from [GitHub Releases](https://github.com/atabisz/JivePipe/releases/latest):
 
 **Linux**
-- `jive-linux-amd64.tar.gz` — extract and run directly
-- `jive_*_amd64.deb` — installs to `/usr/bin`
+- `jive-linux-amd64-<version>.tar.gz` — extract and run directly
+- `jive_<version>_amd64.deb` — installs to `/usr/bin`
 
 ```bash
 # Binary
-tar -xzf jive-linux-amd64.tar.gz
+tar -xzf jive-linux-amd64-*.tar.gz
 ./jive
 
 # Deb
@@ -37,10 +37,10 @@ sudo dpkg -i jive_*_amd64.deb
 ```
 
 **Windows**
-- `jive-windows-amd64.zip` — extract and run directly
+- `jive-windows-amd64-<version>.zip` — extract and run directly
 
 ```powershell
-Expand-Archive jive-windows-amd64.zip
+Expand-Archive jive-windows-amd64-*.zip
 .\jive.exe
 
 # Pipe in PowerShell
