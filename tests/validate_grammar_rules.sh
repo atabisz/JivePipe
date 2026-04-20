@@ -128,10 +128,10 @@ fi
 
 echo "--- PHRASES COUNT ---"
 phrase_count=$(awk '/static const Entry phrases/,/^};/' "$DIC" | grep -c '{"')
-if [ "$phrase_count" -eq 56 ]; then
-    pass "phrases_count: exactly 56 entries in phrases[]"
+if [ "$phrase_count" -eq 57 ]; then
+    pass "phrases_count: exactly 57 entries in phrases[]"
 else
-    fail "phrases_count: exactly 56 entries in phrases[]" \
+    fail "phrases_count: exactly 57 entries in phrases[]" \
          "got $phrase_count"
 fi
 

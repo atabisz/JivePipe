@@ -1,4 +1,4 @@
-VERSION = 1.0.0
+VERSION = 1.3.1
 CC      = gcc
 CFLAGS  = -O2 -Wall -Wextra -std=c99
 TARGET  = jive
