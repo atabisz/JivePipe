@@ -28,10 +28,10 @@ Fix the 14 inauthentic/anachronistic entries identified in JIVE.md Gap Analysis,
 
 Add authentic terms from the JIVE.md Gap Analysis with primary-source backing.
 
-- [ ] **VOC-01**: Add verb entries: `collar` [C], `scoff` [C], `lamp` [C], `knock` [C], `fall in` [C], `fall out` [G], `hip` (v.) [G], `kill` [G], `truck`/`truckin'` [G]
-- [ ] **VOC-02**: Add noun entries: `killer-diller` [C], `sender`/`solid sender` [C], `sky piece` [C], `short` (car) [C], `vine`/`vines` [C], `scratch` (money) [G], `kicks` (shoes) [G], `stud` [M], `a hummer` [C]
-- [ ] **VOC-03**: Add adjective entries: `icky` [C], `mellow` [C], `crazy` (positive, bebop era), `cool` (Lester Young)
-- [ ] **VOC-04**: Add social stratification word entries: `snobbish`→`dicty`, `stuffy`→`hincty`, `white person`-adjacent phrases using `ofay`/`gray` per register context
+- [x] **VOC-01**: Add verb entries: `collar` [C], `scoff` [C], `lamp` [C], `knock` [C], `fall in` [C], `fall out` [G], `hip` (v.) [G], `kill` [G], `truck`/`truckin'` [G]
+- [x] **VOC-02**: Add noun entries: `killer-diller` [C], `sender`/`solid sender` [C], `sky piece` [C], `short` (car) [C], `vine`/`vines` [C], `scratch` (money) [G], `kicks` (shoes) [G], `stud` [M], `a hummer` [C]
+- [x] **VOC-03**: Add adjective entries: `icky` [C], `mellow` [C], `crazy` (positive, bebop era), `cool` (Lester Young)
+- [x] **VOC-04**: Add social stratification word entries: `snobbish`→`dicty`, `stuffy`→`hincty`, `white person`-adjacent phrases using `ofay`/`gray` per register context
 
 ### Grammatical Rules (Tier 1)
 
@@ -89,10 +89,10 @@ Implement the Tier 1 rules from JIVE.md — achievable via phrase substitution i
 | DICT-14 | Phase 1 | Complete |
 | FILL-01 | Phase 1 | Complete |
 | FILL-02 | Phase 1 | Complete |
-| VOC-01 | Phase 2 | Pending |
-| VOC-02 | Phase 2 | Pending |
-| VOC-03 | Phase 2 | Pending |
-| VOC-04 | Phase 2 | Pending |
+| VOC-01 | Phase 2 | Complete |
+| VOC-02 | Phase 2 | Complete |
+| VOC-03 | Phase 2 | Complete |
+| VOC-04 | Phase 2 | Complete |
 | GRAM-01 | Phase 3 | Pending |
 | GRAM-02 | Phase 3 | Pending |
 | GRAM-03 | Phase 3 | Pending |

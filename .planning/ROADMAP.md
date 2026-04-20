@@ -13,7 +13,7 @@ Three phases bring the dictionary into full alignment with JIVE.md: first, fix t
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Dictionary Corrections + Filler Quality** - Fix 14 inauthentic entries and repair the era-authenticity of the filler list
-- [ ] **Phase 2: Vocabulary Expansion** - Add primary-source-backed verb, noun, adjective, and social stratification entries
+- [x] **Phase 2: Vocabulary Expansion** - Add primary-source-backed verb, noun, adjective, and social stratification entries (completed 2026-04-20)
 - [ ] **Phase 3: Grammatical Rules** - Implement Tier 1 grammatical transformations via phrase substitution
 
 ## Phase Details
@@ -45,7 +45,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 02-01-PLAN.md — Resolve 6 entry conflicts and add 20 new era-authentic vocabulary entries to src/dictionary.h
+- [x] 02-01-PLAN.md — Resolve 6 entry conflicts and add 20 new era-authentic vocabulary entries to src/dictionary.h
 
 ### Phase 3: Grammatical Rules
 **Goal**: The `phrases[]` array implements existential "it", completive "done", and the contraction table
@@ -66,5 +66,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Dictionary Corrections + Filler Quality | 1/1 | Complete | 2026-04-20 |
-| 2. Vocabulary Expansion | 0/1 | Not started | - |
+| 2. Vocabulary Expansion | 1/1 | Complete   | 2026-04-20 |
 | 3. Grammatical Rules | 0/0 | Not started | - |

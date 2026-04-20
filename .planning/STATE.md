@@ -1,18 +1,25 @@
 ---
+gsd_state_version: 1.0
 milestone: v1.0
-phase: 2
-phase_name: Vocabulary Expansion
-status: Phase complete
+milestone_name: milestone
+status: executing
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-04-20T03:28:20.526Z"
 last_activity: 2026-04-20
-context_captured: true
+progress:
+  total_phases: 3
+  completed_phases: 2
+  total_plans: 2
+  completed_plans: 2
+  percent: 100
 ---
 
 ## Current Position
 
-Phase: 1 of 3 (Dictionary Corrections + Filler Quality)
+Phase: 2 of 3 (Vocabulary Expansion)
 Plan: 1 of 1 in current phase
-Status: Context gathered — ready for planning
-Last activity: 2026-04-20 — Phase 1 executed; all plans complete
+Status: Ready to execute
+Last activity: 2026-04-20
 
 Progress: [██░░░░░░░░] 20%
 
@@ -26,6 +33,7 @@ See: .planning/PROJECT.md (updated 2026-04-20)
 ## Performance Metrics
 
 **Velocity:**
+
 - Total plans completed: 1
 - Average duration: 3 min
 - Total execution time: 3 min
@@ -37,10 +45,12 @@ See: .planning/PROJECT.md (updated 2026-04-20)
 | 1. Dictionary Corrections + Filler Quality | 1/1 | 3 min | 3 min |
 
 **Recent Trend:**
+
 - Last 5 plans: 3 min
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 02-vocabulary-expansion P01 | 2min | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -53,6 +63,10 @@ Recent decisions affecting current work:
 - Phrase-before-word ordering: longest-match-wins prevents double substitution artifacts
 - JIVE.md in repo root is the authoritative language reference; all entries must be attested in [C], [B], [M], or [G]
 - Tier 1 grammar rules go into `phrases[]` array (longer strings checked first), word entries into `words[]`, filler into `fillers[]`
+- [Phase ?]: truck/truckin' added to words[] as single-word tokens per D-02 intent
+- [Phase ?]: fall in/fall out added to phrases[] as multi-word tokens per D-02
+- [Phase ?]: Social stratification comment block added after adjectives section for dicty/hincty
+- [Phase ?]: ofay/gray entries deferred per D-06 general-audience constraint
 
 ### Pending Todos
 
@@ -70,6 +84,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-20
-Stopped at: Phase 2 context gathered — ready for /gsd-plan-phase 2
-Resume file: .planning/phases/02-vocabulary-expansion/02-CONTEXT.md
+Last session: 2026-04-20T03:28:20.519Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None
