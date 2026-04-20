@@ -70,7 +70,8 @@ static int try_match(const Entry *dict, int count,
         if (end < in_len && is_word_char(input[end])) continue;
 
         char rep[512];
-        apply_case(input + i, flen, dict[d].to, rep, sizeof(rep));
+        const char *chosen = dict[d].to[rand() % dict[d].to_count];
+        apply_case(input + i, flen, chosen, rep, sizeof(rep));
 
         /* Skip first word of rep if it duplicates the last word already in buf.
          * Prevents "the the commissary" when "the store" → "the commissary". */

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "translator.h"
 
@@ -38,7 +39,7 @@ static void print_help(void) {
 }
 
 int main(int argc, char *argv[]) {
-    srand((unsigned int)time(NULL));
+    srand((unsigned int)time(NULL) ^ ((unsigned int)getpid() << 16));
     if (argc >= 2) {
         if (strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
             print_help();
