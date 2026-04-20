@@ -111,7 +111,7 @@ void translate_line(const char *input, char *output, int output_size) {
             while (j < t1p && is_word_char(t1[j])) j++;
             int wlen = j - ws;
 
-            if (wlen >= 5
+            if (wlen >= 4        /* covers "ring", "king", "sing", etc. */
                 && tolower((unsigned char)t1[ws + wlen - 3]) == 'i'
                 && tolower((unsigned char)t1[ws + wlen - 2]) == 'n'
                 && tolower((unsigned char)t1[ws + wlen - 1]) == 'g'
