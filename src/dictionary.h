@@ -43,6 +43,8 @@ static const Entry phrases[] = {
     {"have fun",              "have a ball"},
     {"hang on",               "cool it a sec"},
     {"come on",               "lay it on me"},
+    {"fall out",              "blow your wig"},
+    {"fall in",               "roll in"},
 };
 static const int phrases_count = (int)(sizeof(phrases) / sizeof(phrases[0]));
 
@@ -76,6 +78,7 @@ static const Entry words[] = {
     {"stranger",     "nowhere cat"},
     {"expert",       "hep cat"},
     {"girlfriend",   "queen"},
+    {"fellow",       "stud"},
 
     /* Time / rest */
     {"evening",      "the early black"},
@@ -114,6 +117,8 @@ static const Entry words[] = {
     {"bar",          "joint"},
     {"dance",        "get down"},
     {"dancer",       "stomper"},
+    {"thrill",       "killer-diller"},
+    {"performer",    "solid sender"},
 
     /* Places */
     {"place",        "joint"},
@@ -187,6 +192,14 @@ static const Entry words[] = {
     {"win",          "come out solid"},
     {"lose",         "come out nowhere"},
     {"try",          "put it down"},
+    {"give",         "knock"},
+    {"grasp",        "collar"},
+    {"obtain",       "collar"},
+    {"inform",       "hip"},
+    {"tell",         "hip"},
+    {"impress",      "kill"},
+    {"truck",        "get down"},
+    {"truckin'",     "get down"},
 
     /* Adjectives */
     {"good",         "solid"},
@@ -240,6 +253,16 @@ static const Entry words[] = {
     {"hot",          "cooking"},
     {"cold",         "stone cold"},
     {"perfect",      "real gone"},
+    {"unhip",        "icky"},
+    {"ignorant",     "icky"},
+    {"relaxed",      "mellow"},
+    {"pleasant",     "mellow"},
+    {"outstanding",  "a hummer"},
+    {"exceptional",  "a hummer"},
+
+    /* Social stratification */
+    {"snobbish",     "dicty"},
+    {"stuffy",       "hincty"},
 
     /* Adverbs / affirmations / negations */
     {"very",         "real"},
