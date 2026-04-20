@@ -17,7 +17,6 @@ A comprehensive language rules document for the jivepipe translator, grounded in
 7. [Register Variation and Code-Switching](#register-variation-and-code-switching)
 8. [Related Dialects](#related-dialects)
 9. [Authenticity Guidelines](#authenticity-guidelines)
-10. [JivePipe Gap Analysis](#jivepipe-gap-analysis)
 
 ---
 
@@ -70,8 +69,6 @@ The verbal -ing suffix loses its final /g/, producing /in'/:
 
 **Critical constraint:** This rule targets the *grammatical -ing suffix* only. It does **not** apply to monosyllabic content words. `sing`, `ring`, `king`, `thing`, `bring`, `swing`, `string`, `sting`, `spring` are **never** reduced. "Sing" never becomes "sin."
 
-**Implementation note:** jivepipe already implements this rule in Phase 3 of `translator.c` with the `ing_exceptions` list. The exceptions list correctly excludes monosyllabic words.
-
 ### Rule 2: Consonant Cluster Reduction
 
 Word-final consonant clusters simplify by deleting the final consonant, particularly when both consonants share voicing:
@@ -85,8 +82,6 @@ Word-final consonant clusters simplify by deleting the final consonant, particul
 - `told` → `tol'`
 
 **Constraint:** Mixed-voicing clusters resist reduction. Past tense -ed can create clusters that reduce, making past tense phonologically invisible in some forms (context disambiguates).
-
-**Implementation note:** jivepipe does not currently implement this rule. It is a lower-priority enhancement — the effect is subtle and best handled through specific dictionary entries rather than a general rule.
 
 ### Rule 3: Vowel Elisions and Contractions
 
@@ -142,18 +137,6 @@ The diphthong /ai/ monophthongizes to [a:] before voiced consonants and word-fin
 
 Like phonology, jive grammar draws on the AAVE grammatical substrate. These are systematic linguistic features with precise constraints, not random errors.
 
-### Implementation Tiers
-
-Grammatical rules vary in what they require to implement. Each rule below is marked:
-
-- **Tier 1** — Implementable via string/regex substitution (current jivepipe approach)
-- **Tier 2** — Requires part-of-speech (POS) tagging
-- **Tier 3** — Requires full parse tree (not currently implemented in jivepipe)
-
-Rules marked Tier 2 or Tier 3 describe the language as it was spoken; jivepipe approximates them through dictionary entries where possible.
-
----
-
 ### Rule 1: Double Negation (Negative Concord)
 
 When a sentence is negative, **all negatable elements are negated**. Multiple negative markers produce a single semantic negation — they reinforce rather than cancel:
@@ -165,8 +148,6 @@ When a sentence is negative, **all negatable elements are negated**. Multiple ne
 - `I don't never have no problems with nobody` = I never have any problems with anyone
 
 This is a systematic grammatical rule (negative concord) found in the majority of the world's languages and in English through the 17th century. It is not an error.
-
-**Tier 1** — Partially implementable via phrase substitution (e.g., `anything` → `nothing`, `ever` → `never` in negative contexts). Full application requires sentence-level parse context.
 
 ### Rule 2: Be-Deletion / Zero Copula
 
@@ -186,8 +167,6 @@ Present-tense forms of `be` (specifically `is` and `are`) may be deleted where s
 
 **Frequency hierarchy:** Deletion most common before `gonna`, then before progressive -ing, then before adjectives/locatives, least common before noun phrases.
 
-**Tier 3** — Requires parse tree to distinguish `is`/`are` from other verbs and to enforce the clause-final prohibition. Not currently implemented in jivepipe.
-
 ### Rule 3: Habitual "Be" (Invariant Be)
 
 Uninflected `be` marks **habitual, recurring, or characteristic** actions — not what is happening right now:
@@ -202,8 +181,6 @@ Uninflected `be` marks **habitual, recurring, or characteristic** actions — no
 
 Negation uses `don't`: `He don't be in school`. Questions use `do/did`: `Do he be comin' home late?`
 
-**Tier 2** — Requires POS tagging to distinguish habitual `be` from other uses of `be`. Not currently implemented in jivepipe.
-
 ### Rule 4: Existential "It" Instead of "There"
 
 `It` replaces standard English `there` in existential constructions:
@@ -211,8 +188,6 @@ Negation uses `don't`: `He don't be in school`. Questions use `do/did`: `Do he b
 - `It's a cat on the corner` = There's a cat on the corner
 - `It ain't nothing going on` = There isn't anything going on
 - `It's a party tonight` = There's a party tonight
-
-**Tier 1** — Implementable via string substitution (`There's` → `It's`, `There is` → `It is`).
 
 ### Rule 5: Negative Inversion
 
@@ -224,8 +199,6 @@ A negated auxiliary moves to clause-initial position before an indefinite subjec
 
 **Constraints:** Contracted negation (n't) is required. Subjects must be indefinite/quantificational (nobody, nothing, everybody). Definite subjects (names, pronouns) are ungrammatical in this construction.
 
-**Tier 3** — Requires parse tree to identify and front the negated auxiliary. Not currently implemented in jivepipe.
-
 ### Rule 6: Completive "Done"
 
 Preverbal `done` marks completed action, often with emphasis, surprise, or speaker attitude:
@@ -233,8 +206,6 @@ Preverbal `done` marks completed action, often with emphasis, surprise, or speak
 - `I done told you` = I already told you (with emphasis)
 - `He done left` = He has already left
 - `She done spent all the bread` = She has spent all the money (with disapproval)
-
-**Tier 1** — Partially implementable via phrase substitution (`I already` → `I done`, `already told` → `done told`). Some contexts require POS context to apply correctly.
 
 ### Rule 7: Remote Past "BIN" (Stressed Been)
 
@@ -245,8 +216,6 @@ Stressed `BIN` [bee:n] marks events in the distant past or states that have pers
 - `I BIN had that` = I've had that for ages
 
 Cannot combine with specific time markers. With nonverbal predicates, implies the state still holds.
-
-**Tier 3** — Requires prosodic/stress analysis to distinguish BIN from unstressed "been." Not implementable via string substitution.
 
 ---
 
@@ -504,8 +473,6 @@ These are appended to statements for rhythm, emphasis, and in-group signaling. A
 
 **Authentic placement pattern:** In authentic Jive speech, fillers were not random insertions — they fell at **phrase boundaries and rhythmic stress points**, giving speech its musical timing. Fillers typically appear: (a) after the main clause at sentence end, (b) after a comma-natural pause mid-sentence, or (c) as a tag question closing a statement. Fillers dropped mid-phrase between subject and verb, or between verb and object, are arhythmic and inauthentic.
 
-**Implementation note:** jivepipe's current filler list includes `— dig?`, `, daddy-o`, `— you hip?`, `, can you dig it?`, `— solid!`, `, no jive`, `— that's the real deal`, `, baby`, `— lay it on me`, `, feel me?`, `— you know the scene`. All except `, feel me?` (modern AAVE, 1990s) are era-appropriate. The current ~20% injection rate is a pragmatic approximation; authentic density varied by speaker and social context.
-
 ---
 
 ## Sentence-Level Transformation Rules
@@ -719,68 +686,6 @@ Several terms in wide circulation online as "Harlem Jive" are invented or misatt
 ### Drug Vocabulary
 
 Authentic period jive contains extensive marijuana vocabulary: `gage`, `muggles`, `mezz`, `tea`, `reefer`, `pot`, `stick of tea`, `lid` (one ounce), `teapad`, `T-man`, `vipers`, `light up`, `puff`, `mugglin'`. This was a genuine coded sub-lexicon. The jivepipe translator's general-audience use case may justify omitting these terms, but they are historically accurate.
-
----
-
-## JivePipe Gap Analysis
-
-### Confirmed Authentic (existing dictionary.h entries)
-
-The following current entries have strong primary-source attestation and should be retained:
-`bread`, `cat`, `chick`, `dig`, `solid`, `righteous`, `pad`, `threads`, `lid`, `stomps`, `gig`, `joint`, `turf`, `hip`, `square`, `nowhere`, `a drag`, `copasetic`, `daddy-o`, `cut out`, `split`, `blow`, `cop`, `loot`, `clams`, `platter`, `wax`, `fuzz`, `togged to the bricks`, `the early bright`, `the early black`, `ace`, `peepers`, `gams`, `mug`, `frame`, `wig`, `sawbones`, `hep cat`, `the most`, `real gone`, `groovy`
-
-### Inauthentic / Anachronistic (consider replacing)
-
-| Current Term/Phrase | Issue | Suggested Replacement |
-|---------------------|-------|----------------------|
-| `homeboy` (for buddy) | 1960s–70s, not 1940s jive | `ace`, `gate`, `Jack` |
-| `, feel me?` (filler) | Modern AAVE, 1990s+ | `, you dig?` or `, dig?` |
-| `twenty-four seven` (for always) | Modern expression | `from sun up to sun down` or `all the time, daddy-o` |
-| `for real though` (for actually) | Modern AAVE | `no jive` |
-| `in the cut` (for basically) | More modern AAVE | `on the real` or `dig this` |
-| `brand-spanking` (for new) | General colloquial, not jive | `fresh-pressed` |
-| `the ginchiest` | 1959 TV slang | `the most` or `real gone` |
-| `soul pocket` (for heart) | Not attested | `ticker` |
-| `lid holder` (for head) | Not attested | `wig` (already in dict for brain) |
-| `shop on the square` (for store) | Not attested | `the commissary` |
-| `the square factory` (for school) | Not attested | `the hip grinder` |
-| `square bylaws` (for rules) | Not attested | `the straight-up code` |
-| `nowhere near boss` (for small) | Not attested | `short`, `a lightweight` |
-| `nowhere near fine` (for ugly) | Not attested | `beat`, `a real drag to look at` |
-
-### Authentic Terms Missing from Current Dictionary
-
-High-value additions with strong primary-source backing:
-
-| Term | Replace / Add As | Definition | Source |
-|------|-----------------|-----------|--------|
-| `collar` | verb | To understand; to grasp | C |
-| `gate` | address | Any man (direct address) | C |
-| `Jack` | address | Any man (direct address) | C |
-| `frail` | noun | A woman | C |
-| `killer-diller` | adj | Something sensationally good | C |
-| `sender` / `solid sender` | noun | A thrilling performer | C |
-| `scoff` | verb | To eat | C |
-| `lamp` | verb | To look at | C |
-| `knock` | verb | To give | C |
-| `fall in` | verb | To arrive | C |
-| `sky piece` | noun | A hat | C |
-| `short` | noun | A car | C |
-| `vine` / `vines` | noun | A suit; clothes | C |
-| `icky` | adj | Unhip; ignorant of jazz | C |
-| `truck` / `truckin'` | verb | To go; to walk | G |
-| `scratch` | noun | Money | G |
-| `kicks` | noun | Shoes | G |
-| `wail` | verb | To play superbly | G |
-| `sound` | verb | To speak | G |
-| `stud` | noun | A man (strong/impressive) | M |
-| `fall out` | verb | To be overcome; to faint | G |
-| `hip` (v.) | verb | To inform; to make aware | G |
-| `kill` | verb | To impress greatly | G |
-| `mellow` | adj | Good; pleasing; calm | C |
-| `a hummer` | noun phrase | Something exceptionally good | C |
-| `crazy` | adj (positive) | Wonderful; amazing | Bebop era |
-| `cool` | adj | Excellent; composed | Lester Young |
 
 ---
 

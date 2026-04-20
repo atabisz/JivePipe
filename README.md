@@ -1,12 +1,23 @@
 # JivePipe
 
-Translate any text into authentic Harlem Jive slang. Pipe text in, get jive out.
+Translate any text into authentic Harlem Jive slang (1928–1952). Pipe text in, get jive out.
 
-Phrases get swapped, `-ing` endings drop their `g`, and the occasional filler — *daddy-o* — rolls in at random. The translation is single-pass, so substitutions never cascade into each other.
+Written in C. Binary is ~35KB. Dictionary is in `src/dictionary.h` — 234 word entries, 56 phrase entries, 13 era-authentic fillers.
 
-Written in C. Binary is ~35KB.
+See [JIVE.md](JIVE.md) for the full language reference — vocabulary, phonological rules, grammatical rules, and historical context.
 
-See [JIVE.md](JIVE.md) for the full language reference — vocabulary, phonological rules, and historical context.
+## How it works
+
+JivePipe runs a four-phase pipeline on each line of input:
+
+1. **Phrase substitution** — multi-word phrases matched longest-first (grammar rules, idioms, multi-word expressions)
+2. **Word substitution** — single-word vocabulary replacements
+3. **G-dropping** — verbal `-ing` endings become `-in'`; monosyllabic words (`sing`, `ring`, `king`, `thing`, `bring`, `swing`) are excluded
+4. **Filler injection** — era-authentic filler appended at ~20% rate
+
+Phases run in order and never cascade — a word replaced in phase 2 cannot re-trigger a phrase match in phase 1.
+
+Grammar rules (existential "it", completive "done", contraction table) are implemented as phrase substitutions in phase 1. More complex rules requiring part-of-speech tagging or a parse tree — habitual `be`, copula deletion, negative inversion — are not implemented.
 
 ## Download
 
