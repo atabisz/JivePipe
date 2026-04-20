@@ -6,6 +6,8 @@ Phrases get swapped, `-ing` endings drop their `g`, and the occasional filler â€
 
 Written in C. Binary is ~35KB.
 
+See [JIVE.md](JIVE.md) for the full language reference â€” vocabulary, phonological rules, and historical context.
+
 ## Download
 
 Grab the latest release from [GitHub Releases](https://github.com/atabisz/JivePipe/releases/latest):
