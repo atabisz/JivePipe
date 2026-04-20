@@ -21,12 +21,20 @@ jobs:
         run: |
           make
           chmod +x jive
-          tar -czf jive-linux-amd64.tar.gz jive
+          VERSION="${GITHUB_REF_NAME#v}"
+          if [ -z "$VERSION" ] || [ "$VERSION" = "$GITHUB_REF_NAME" ]; then
+            VERSION=$(grep '^VERSION' Makefile | awk '{print $3}')
+          fi
+          tar -czf "jive-linux-amd64-${VERSION}.tar.gz" jive
 
       - name: Build Windows binary
         run: |
           x86_64-w64-mingw32-gcc -O2 -Wall -std=c99 -o jive.exe src/main.c src/translator.c
-          zip jive-windows-amd64.zip jive.exe
+          VERSION="${GITHUB_REF_NAME#v}"
+          if [ -z "$VERSION" ] || [ "$VERSION" = "$GITHUB_REF_NAME" ]; then
+            VERSION=$(grep '^VERSION' Makefile | awk '{print $3}')
+          fi
+          zip "jive-windows-amd64-${VERSION}.zip" jive.exe
 
       - name: Build deb package
         run: |
@@ -46,13 +54,13 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: jive-linux-amd64
-          path: jive-linux-amd64.tar.gz
+          path: jive-linux-amd64-*.tar.gz
 
       - name: Upload Windows binary
         uses: actions/upload-artifact@v7
         with:
           name: jive-windows-amd64
-          path: jive-windows-amd64.zip
+          path: jive-windows-amd64-*.zip
 
       - name: Upload deb
         uses: actions/upload-artifact@v7
@@ -65,6 +73,6 @@ jobs:
         uses: softprops/action-gh-release@v2.3.2
         with:
           files: |
-            jive-linux-amd64.tar.gz
-            jive-windows-amd64.zip
+            jive-linux-amd64-*.tar.gz
+            jive-windows-amd64-*.zip
             *.deb
