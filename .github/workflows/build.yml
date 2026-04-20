@@ -30,7 +30,10 @@ jobs:
 
       - name: Build deb package
         run: |
-          VERSION=$(grep '^VERSION' Makefile | awk '{print $3}')
+          VERSION="${GITHUB_REF_NAME#v}"
+          if [ -z "$VERSION" ] || [ "$VERSION" = "$GITHUB_REF_NAME" ]; then
+            VERSION=$(grep '^VERSION' Makefile | awk '{print $3}')
+          fi
           PKG="jive_${VERSION}_amd64"
           mkdir -p "${PKG}/DEBIAN"
           mkdir -p "${PKG}/usr/bin"
