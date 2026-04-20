@@ -71,8 +71,26 @@ static int try_match(const Entry *dict, int count,
 
         char rep[512];
         apply_case(input + i, flen, dict[d].to, rep, sizeof(rep));
-        int rlen = (int)strlen(rep);
-        if (*bufp + rlen < BUF - 1) { memcpy(buf + *bufp, rep, (size_t)rlen); *bufp += rlen; }
+
+        /* Skip first word of rep if it duplicates the last word already in buf.
+         * Prevents "the the commissary" when "the store" → "the commissary". */
+        int fw_end = 0;
+        while (rep[fw_end] && is_word_char(rep[fw_end])) fw_end++;
+        int skip = 0;
+        if (fw_end > 0 && rep[fw_end] == ' ' && *bufp > 0) {
+            int bp = *bufp - 1;
+            while (bp >= 0 && !is_word_char(buf[bp])) bp--;
+            if (bp >= 0) {
+                int ws = bp;
+                while (ws > 0 && is_word_char(buf[ws - 1])) ws--;
+                int prev_len = bp - ws + 1;
+                if (prev_len == fw_end && icmp(buf + ws, rep, fw_end) == 0)
+                    skip = fw_end + 1;
+            }
+        }
+
+        int rlen = (int)strlen(rep + skip);
+        if (*bufp + rlen < BUF - 1) { memcpy(buf + *bufp, rep + skip, (size_t)rlen); *bufp += rlen; }
         return end;
     }
     return -1;
