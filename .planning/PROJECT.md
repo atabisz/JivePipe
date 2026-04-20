@@ -42,13 +42,13 @@ Any text piped through `jive` should produce output that a 1940s Harlem jazz mus
 - [x] FILL-01: `, feel me?` removed from filler list
 - [x] FILL-02: 3 era-authentic fillers added (`— you hip to that?`, `, Jack`, `— that's the lick`)
 
-### Active
+**Vocabulary Expansion (Phase 2 — validated 2026-04-20):**
+- [x] VOC-01: Verb entries added (scoff, lamp, knock, collar, hip v., kill, truck, fall in, fall out)
+- [x] VOC-02: Noun entries added (killer-diller, solid sender, sky piece, short, scratch, kicks, stud, a hummer)
+- [x] VOC-03: Adjective entries added (icky, mellow, a hummer/exceptional)
+- [x] VOC-04: Social stratification terms added (dicty, hincty — ofay/gray deferred per D-06)
 
-**Vocabulary Expansion:**
-- [ ] VOC-01: Verb entries added (collar, scoff, lamp, knock, fall in, fall out, hip v., kill, truck)
-- [ ] VOC-02: Noun entries added (killer-diller, sender, sky piece, short, vine, scratch, kicks, stud, a hummer)
-- [ ] VOC-03: Adjective entries added (icky, mellow, crazy+, cool)
-- [ ] VOC-04: Social stratification terms added (dicty, hincty, gray, ofay word entries)
+### Active
 
 **Grammatical Rules:**
 - [ ] GRAM-01: Existential "it" substitutions implemented
@@ -107,4 +107,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-20 after Phase 1 completion (Dictionary Corrections + Filler Quality)*
+*Last updated: 2026-04-20 after Phase 2 completion (Vocabulary Expansion)*
