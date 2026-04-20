@@ -156,7 +156,19 @@ void translate_line(const char *input, char *output, int output_size) {
         const char *filler = fillers[rand() % fillers_count];
         int flen = (int)strlen(filler);
         if (t2p + flen < BUF - 1) {
-            memcpy(t2 + t2p, filler, (size_t)flen);
+            int letters = 0, all_up = 1;
+            for (int k = 0; k < t2p; k++) {
+                if (isalpha((unsigned char)t2[k])) {
+                    letters++;
+                    if (!isupper((unsigned char)t2[k])) all_up = 0;
+                }
+            }
+            if (letters >= 2 && all_up) {
+                for (int k = 0; k < flen; k++)
+                    t2[t2p + k] = (char)toupper((unsigned char)filler[k]);
+            } else {
+                memcpy(t2 + t2p, filler, (size_t)flen);
+            }
             t2p += flen;
             t2[t2p] = '\0';
         }
