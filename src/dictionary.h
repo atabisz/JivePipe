@@ -302,8 +302,10 @@ static const char *fillers[] = {
     " \xe2\x80\x94 that's the real deal",
     ", baby",
     " \xe2\x80\x94 lay it on me",
-    ", feel me?",
     " \xe2\x80\x94 you know the scene",
+    " \xe2\x80\x94 you hip to that?",
+    ", Jack",
+    " \xe2\x80\x94 that's the lick",
 };
 static const int fillers_count = (int)(sizeof(fillers) / sizeof(fillers[0]));
 
