@@ -85,20 +85,20 @@ static const Entry words[] = {
     {"knife",        "shiv"},
 
     /* Money / possessions */
-    {"money",        "bread"},
+    {"money",        "scratch"},
     {"cash",         "loot"},
     {"dollar",       "clam"},
     {"dollars",      "clams"},
     {"wallet",       "stash pocket"},
-    {"car",          "wheels"},
+    {"car",          "short"},
     {"house",        "pad"},
     {"home",         "pad"},
     {"apartment",    "pad"},
     {"room",         "cubby"},
     {"clothes",      "threads"},
     {"suit",         "vine"},
-    {"hat",          "lid"},
-    {"shoes",        "stomps"},
+    {"hat",          "sky piece"},
+    {"shoes",        "kicks"},
 
     /* Music / entertainment */
     {"music",        "sounds"},
@@ -145,7 +145,7 @@ static const Entry words[] = {
 
     /* Food / drink */
     {"food",         "chow"},
-    {"eat",          "put on the feedbag"},
+    {"eat",          "scoff"},
     {"drink",        "juice"},
     {"coffee",       "mud"},
     {"beer",         "suds"},
@@ -162,7 +162,7 @@ static const Entry words[] = {
     {"speak",        "rap"},
     {"listen",       "tune in"},
     {"hear",         "pick up on"},
-    {"look",         "peep"},
+    {"look",         "lamp"},
     {"go",           "split"},
     {"stop",         "cool it"},
     {"wait",         "hold on"},
