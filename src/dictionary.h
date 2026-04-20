@@ -3,6 +3,10 @@
 
 typedef struct { const char *from; const char *to; } Entry;
 
+/* WARNING: This header defines static storage.
+ * Include it in exactly ONE translation unit (translator.c).
+ * Do not include it from main.c or any other .c file. */
+
 /* Phrases — sorted longest-first so longest match wins */
 static const Entry phrases[] = {
     {"you know what i mean",  "you dig what i'm layin' down"},
